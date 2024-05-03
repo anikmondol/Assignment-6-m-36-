@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nord">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReTro From</title>
+
+
+    <!-- daisy ui and tailwind css link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+
+    <!-- font asowm -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- custom style css  -->
+    <style>
+        .font_mulish {
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="font_mulish">
+    <header class="container mx-auto px-2">
+        <!-- nav section -->
+        <nav class="navbar bg-slate-50 mt-3 rounded-md lg:px-5">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div class="flex justify-center items-center">
+                        <div class="">
+
+                            <button class="btn btn-ghost text-slate-600 text-2xl font-medium">ReTro</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+            </div>
+            <div class="navbar-end space-x-3">
+                <button title="Home" class="btn btn-ghost btn-circle hidden md:flex">
+                    <img src="images/Frame.png" alt="">
+                </button>
+                <button title="Edit" class="btn btn-ghost btn-circle hidden md:flex">
+                    <img src="images/Frame (1).png" alt="">
+                </button>
+                <button title="Add" class="btn btn-ghost btn-circle hidden md:flex">
+                    <img src="images/Frame (2).png" alt="">
+                </button>
+                <button title="Flag" class="btn btn-ghost btn-circle hidden md:flex">
+                    <img src="images/Frame (3).png" alt="">
+                </button>
+                <button class="btn btn-success outline-none border-none bg-[#797DFC] rounded-xl text-white font-medium">
+                    Sign In
+                </button>
+            </div>
+        </nav>
+
+        <!-- banner section -->
+        <section class="bg-[#12132D] rounded-2xl">
+            <div
+                class=" h-[650px]  mt-10  space-y-20 bg-[linear-gradient(45deg,rgba(18,19,49,0.4),rgba(18,19,45,0.1)),url(./images/banner1.png)] bg-no-repeat bg-cover  flex justify-center items-center gap-10">
+                <div class="hero-content flex-col lg:flex-row mx-auto justify-evenly gap-10 md:gap-20 lg:gap-[120px]">
+                    <div class="space-y-3">
+                        <h1 class="text-center lg:text-start text-2xl md:text-5xl font-black text-white">Welcome to the
+                            <br>
+                            <span class="text-[#797DFC]">ReTro</span> Forum
+                        </h1>
+                        <p class="text-center lg:text-start text-[18px] text-slate-200">Share your favorite opinion and
+                            win
+                            and wp <br> forum coffee mug!</p>
+                        <div class="flex justify-center lg:justify-start">
+                            <input id="search_box" class="flex justify-center pl-2 lg:px-6 rounded-md" type="text"
+                                placeholder="Search here anything" class="px-5 py-2">
+                            <button class="btn btn-accent rounded-lg bg-[#797DFC] border-none text-white" onclick="handleSearch()">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="w-[250px] lg:w-[350px] bg-[#eae7e7] p-5 space-y-7 rounded-xl text-[20px] font-medium text-slate-600">
+                        <div class="flex justify-between">
+                            <p>Registered Users</p>
+                            <p>01</p>
+                        </div>
+                        <div class="flex justify-between">
+                            <p>Forum</p>
+                            <p>05</p>
+                        </div>
+                        <div class="flex justify-between">
+                            <p>Topics</p>
+                            <p>01</p>
+                        </div>
+                        <div class="flex justify-between">
+                            <p>Replies</p>
+                            <p>01</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <!-- progress -->
+    <div class="text-center mx-auto hidden mt-10" id="loading_spinner">
+        <progress class="progress w-72"></progress>
+    </div>
+    
+    <main class="container mx-auto px-2">
+        <!-- Let’s Discuss section -->
+        <section>
+            <div class="flex flex-col items-center my-10">
+                <h3 class="text-[#12132D] text-3xl font-bold">Let’s Discuss</h3>
+                <p class="text-center mt-2 text-[#12132D99] text-[18px] font-medium">Yes, you can run unit tests and
+                    view the results directly within the app. <br> The integrated testing features allow for a
+                    streamlined .</p>
+            </div>
+        </section>
+
+        <!-- fetch data section -->
+        <section class="flex flex-col lg:flex-row justify-between mb-11 gap-10">
+            <div id="myID" class="lg:w-[55%]">
+
+            </div>
+            <div id="mark_id" class="lg:w-[40%] lg:h-[1000px] bg-white  p-5 pb-0 rounded-lg">
+                <div>
+                    <div class="flex justify-between">
+                        <h5 class="text-[#12132D] text-[18px] font-medium">Title</h5>
+                        <div class="flex">
+                            <img src="images/Frame (4).png" alt="">
+                            <p class="flex">
+                                Mark: <span id="mark_cont"> 0</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Forum section -->
+        <section>
+            <div class=" lg:h-[400px] bg-base-200 my-10 bg-[#12132D] rounded-md">
+                <div class="flex flex-col lg:flex-row items-center justify-between p-5 lg:p-10 gap-10 lg:gap-0">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-3xl font-bold text-white">Join Our Forum</h1>
+                        <p class="py-6 text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!
+                            Yes, you can <br> run unit tests and view the results directly within the app. </p>
+                        <button class="btn bg-[#797DFC] border-none text-[18px] text-white">Registered Now</button>
+                    </div>
+                    <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-slate-800">
+                        <img src="images/joinforum.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Latest Posts -->
+        <section>
+            <div class="flex flex-col items-center my-10">
+                <h3 class="text-[#12132D] text-3xl font-bold">Latest Posts</h3>
+                <p class="text-center mt-2 text-[#12132D99] text-[18px] font-medium">Yes, you can run unit tests and
+                    view the <br> results directly within the app. The integrated testing features allow for a
+                    streamlined .</p>
+            </div>
+        </section>
+        <!-- fetch2 load  -->
+        <section id="feach2_contaner" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
+
+        </section>
+
+        
+
+    </main>
+    <footer class="footer footer-center p-10 bg-[#12132D0D] text-base-content rounded mt-20">
+        <section class="container mx-auto px-2 space-y-3">
+            <nav class="grid grid-flow-row gap-4">
+                <h3 class="text-4xl font-bold text-[#12132D]">ReTro</h3>
+                <p class="text-center">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
+                    in a <br> piece of classical Latin literature from 45 BC</p>
+            </nav>
+            <nav>
+                <div class="grid grid-flow-col gap-7">
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                            </path>
+                        </svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                            </path>
+                        </svg></a>
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="fill-current">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                            </path>
+                        </svg></a>
+                </div>
+            </nav>
+            <hr class="w-full h-[2px] bg-slate-500">
+            <aside>
+                <p>2017, All Rights Reserved.</p>
+            </aside>
+        </section>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
